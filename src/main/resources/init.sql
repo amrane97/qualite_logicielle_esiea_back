@@ -1,5 +1,3 @@
-create database stockcar;
-drop table voiture;
 create table voiture (
 	id integer primary key auto_increment,	
 	marque varchar(30) not null,
@@ -13,9 +11,9 @@ create table voiture (
 
 
 insert into voiture (marque, modele, finition, carburant, km, annee, prix) values
-('Citroën', 'C4 Picasso', 'Feel', 'D', 78000, 2017, 15500),
+('Citroï¿½n', 'C4 Picasso', 'Feel', 'D', 78000, 2017, 15500),
 ('Peugeot', '3008', 'Allure', 'D', 4, 2020, 38000),
-('Renault', 'Mégane', 'Dynamique', 'E', 133000, 2007, 3100),
+('Renault', 'Mï¿½gane', 'Dynamique', 'E', 133000, 2007, 3100),
 ('Opel', 'Corsa', 'Elegance', 'E', 140, 0, 0),
 ('Audi', 'R8', 'Black edition', 'E', 68000, 2009, 50000),
 ('BMW', 'F30', 'Lounge', 'E', 210000, 2014, 23990),

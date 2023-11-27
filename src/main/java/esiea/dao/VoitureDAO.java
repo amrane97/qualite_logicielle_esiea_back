@@ -6,9 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
-
 import org.apache.log4j.Logger;
-
 import esiea.metier.Voiture;
 import esiea.metier.Voiture.Carburant;
 import utils.Configuration;
@@ -31,11 +29,11 @@ public class VoitureDAO {
 			}
 		} catch (SQLException sql) {
 			sql.printStackTrace(); 
-			logger.debug("Impossible de se connecter à la base !" + sql);} 
+			logger.debug("Impossible de se connecter ï¿½ la base !" + sql);} 
 		catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		logger.debug("Connexion à la base OK !" + connection);
+		logger.debug("Connexion ï¿½ la base OK !" + connection);
 		return connection;
 	}
 	
@@ -49,7 +47,7 @@ public class VoitureDAO {
 	
 	private void deconnecter() throws SQLException {
 		if(connection != null) {
-			connection.close();
+			//connection.close();
 		}
 	}
 	
@@ -67,7 +65,8 @@ public class VoitureDAO {
 		stmt.executeUpdate();
 		deconnecter();
 	}
-	
+
+	// code jamais utilisÃ© ** code MORT **
 	public void modifierVoiture(int id, Voiture nouvelle) throws SQLException {
 		String requete = "UPDATE Voiture SET marque = ?, "
 				+ "modele = ?, "
@@ -199,7 +198,9 @@ public class VoitureDAO {
 	}
 	
 	private Voiture setVoiture(ResultSet res) throws SQLException {
+
 		Voiture ret = new Voiture();
+
 		ret.setId(res.getInt("id"));
 		ret.setMarque(res.getString("marque"));
 		ret.setModele(res.getString("modele"));
@@ -218,5 +219,4 @@ public class VoitureDAO {
 		stmt.executeUpdate();
 		deconnecter();
 	}
-
 }

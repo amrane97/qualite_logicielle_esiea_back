@@ -2,13 +2,11 @@ package esiea.api;
 
 import java.sql.SQLException;
 
-import javax.ws.rs.DefaultValue;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -34,9 +32,8 @@ public class VoitureAPI {
 	@Path("get/{param}/{mini}/{nbVoitures}")
 	@GET
 	@Produces("application/json")
-	public String getVoituresJson(@PathParam("param") String param, 
-			@PathParam("mini") String miniS, 
-			@PathParam("nbVoitures") String nbVoituresS) {
+	public String getVoituresJson(@PathParam("param") String param, @PathParam("mini") String miniS, @PathParam("nbVoitures") String nbVoituresS) {
+
 		int mini = Integer.parseInt(miniS), nbVoitures = Integer.parseInt(nbVoituresS);
 		ReponseVoiture reponse;
 		JSONObject ret = new JSONObject();

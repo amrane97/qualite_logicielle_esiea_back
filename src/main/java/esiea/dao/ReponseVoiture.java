@@ -6,6 +6,7 @@ public class ReponseVoiture {
 
 	private Voiture[] data;
 	private int volume;
+
 	public Voiture[] getData() {
 		return data;
 	}

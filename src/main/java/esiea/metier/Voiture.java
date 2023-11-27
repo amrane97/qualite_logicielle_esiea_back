@@ -2,17 +2,16 @@ package esiea.metier;
 
 import java.util.Calendar;
 import java.util.Date;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+//ceci est une entité
 public class Voiture {
+
 	private int id;
-	
 	private String marque;
 	private String modele;
 	private String finition;
-	
 	private Carburant carburant;
 	private int km;
 	private int annee;
